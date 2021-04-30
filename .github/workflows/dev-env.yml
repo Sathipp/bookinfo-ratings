@@ -48,9 +48,3 @@ jobs:
                 "COMMIT_SHA": "${{ github.sha }}"
               }
             }
-Test:
-    needs: deploy
-    runs-on: ubuntu-20.04
-    steps:
-      - name: curl
-        run: curl http://bookinfo.dev.opsta.net/student[X]/ratings/health | grep "Ratings is working" && echo$?
